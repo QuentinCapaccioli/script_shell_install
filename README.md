@@ -20,7 +20,7 @@ Script shell permettant d'installer automatiquement les outils de développement
 
 ## Installation
 ```bash
-git clone <url_du_repo>
+git clone https://github.com/QuentinCapaccioli/Script_Installation.git
 cd mon-repo
 chmod +x install.sh
 ./install.sh
@@ -40,10 +40,6 @@ mon-repo/
 │   └── vscode.sh           # Installation VsCode
 ├── lib/
 │   └── utils.sh            # Fonctions utilitaires (log, error, section)
-├── src/
-│   └── mon_package_ros2/   # Package ROS2
-└── logs/
-    └── .gitkeep
 ```
 
 ## Auteur
