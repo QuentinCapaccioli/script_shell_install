@@ -28,17 +28,16 @@ chmod +x install.sh
 
 ## Arborescence
 ```
-mon-repo/
+script_shell_install/
 ├── README.md
 ├── install.sh              # Point d'entrée principal
 ├── scripts/
 │   ├── docker.sh           # Installation Docker
 │   ├── gazebo.sh           # Installation Gazebo
 │   ├── git.sh              # Installation Git
-│   ├── ros2.sh             # Installation ROS2
-│   ├── rviz.sh             # Installation RViz2
+│   ├── ros2.sh             # Installation ROS2 & RViz2
 │   └── vscode.sh           # Installation VsCode
-├── lib/
+└── lib/
     └── utils.sh            # Fonctions utilitaires (log, error, section)
 ```
 
