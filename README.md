@@ -39,7 +39,7 @@ mon-repo/
 │   ├── rviz.sh             # Installation RViz2
 │   └── vscode.sh           # Installation VsCode
 ├── lib/
-│   └── utils.sh            # Fonctions utilitaires (log, error, section)
+    └── utils.sh            # Fonctions utilitaires (log, error, section)
 ```
 
 ## Auteur
