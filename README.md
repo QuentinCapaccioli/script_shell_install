@@ -13,6 +13,11 @@ Script shell permettant d'installer automatiquement les outils de développement
 | Gazebo  | Harmonic     | Simulateur robotique               |
 | RViz2   | Jazzy        | Outil de visualisation ROS2        |
 
+## Dernière version testée
+- Git → 2.43.0
+- Docker → 29.5.3
+- VsCode → 1.123.0
+
 ## Prérequis
 - Ubuntu Noble (24.04)
 - Connexion internet
