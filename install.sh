@@ -10,14 +10,16 @@
 # - RViz
 # - VsCode
 # Nom : Quentin Capaccioli
-# Date : 04/06/2026
-# Derniere modification: Creation du script
+# Date : 15/06/2026
+# Derniere modification: Support Ubuntu/Debian
 #=======================================================================================#
 
 source lib/utils.sh
 for script in scripts/*.sh; do
     source "$script"
 done
+Detect_Distro
+log "Distribution détectée : $DISTRO_ID $DISTRO_VERSION"
 
 #===================================#
 #   Initialisation des variables    #
@@ -48,8 +50,10 @@ Verification_Downloads() {
     verify_install "Docker" $Check_Docker
     verify_install "Gazebo" $Check_Gazebo
     verify_install "Git" $Check_Git
-    verify_install "ROS2" $Check_ROS2
-    verify_install "Rviz" $Check_Rviz
+    if [[ "$DISTRO_ID" = "ubuntu"  ]]; then
+        verify_install "ROS2" $Check_ROS2
+        verify_install "Rviz" $Check_Rviz
+    fi
     verify_install "VsCode" $Check_VsCode
 }
  
@@ -63,7 +67,9 @@ sudo apt upgrade -y
 Docker_Download 
 Gazebo_Download
 Git_Download
-ROS2_Download   # telechargement de Rviz2 en plus
+if [[ "$DISTRO_ID" = "ubuntu"  ]]; then
+    ROS2_Download   # telechargement de Rviz2 en plus
+fi
 VsCode_Download
 
 # Verification

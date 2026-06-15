@@ -3,9 +3,10 @@
 #=======================================================================================#
 # Objectif : Script shell pour l'installation de ROS2 et de Rviz2
 # Nom : Quentin Capaccioli
-# Date : 04/06/2026
-# Derniere modification: Creation du script
+# Date : 15/06/2026
+# Derniere modification: Support Ubuntu/Debian
 #=======================================================================================#
+source ../lib/utils.sh
 
 #================================#
 #   Fonction de telechargement   #
@@ -13,8 +14,9 @@
 ROS2_Download() {
     section "Installation de ROS2"
 
+    Detect_Distro || { Check_ROS2=0; return 1; }
+
     # Installation des UTF-8 locales
-    sudo apt update
     sudo apt install -y locales
 
     # Installation de Ubuntu Universe repository
@@ -37,11 +39,9 @@ ROS2_Download() {
         sudo apt full-upgrade -y
     fi
 
-    sudo apt update
     sudo apt install -y ros-dev-tools
 
     # Installation des packages ROS2
-    sudo apt update
     sudo apt -y upgrade
     sudo apt install -y ros-jazzy-desktop
     sudo apt install -y ros-jazzy-ros-base

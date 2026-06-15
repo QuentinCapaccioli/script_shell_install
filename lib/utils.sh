@@ -3,8 +3,8 @@
 #=======================================================================================#
 # Objectif : Fonctions afin de rendre la console plus lisible
 # Nom : Quentin Capaccioli
-# Date : 04/06/2026
-# Derniere modification: Creation du script
+# Date : 15/06/2026
+# Derniere modification: Support Ubuntu/Debian
 #=======================================================================================#
 
 #==============================#
@@ -20,4 +20,25 @@ error() {
 
 section() {
     echo -e "\n\e[34m=== $1 ===\e[0m";
+}
+
+#==============================================#
+#   Fonction de detection de la distribution   #
+#==============================================#
+Detect_Distro() {
+    if [ ! -f /etc/os-release ]; then
+        error "Impossible de détecter la distribution"
+        exit 1
+    fi
+    
+    . /etc/os-release
+    
+    DISTRO_ID="$ID"
+    DISTRO_CODENAME="$VERSION_CODENAME"
+
+    if [[ "$DISTRO_ID" != "ubuntu" && "$DISTRO_ID" != "debian" ]]; then
+        error "Distribution non supportée : $DISTRO_ID"
+        return 1
+    fi
+    return 0
 }
