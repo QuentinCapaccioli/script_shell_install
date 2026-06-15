@@ -25,8 +25,8 @@ Script shell permettant d'installer automatiquement les outils de développement
 
 ## Installation
 ```bash
-git clone https://github.com/QuentinCapaccioli/Script_Installation.git
-cd mon-repo
+git clone https://github.com/QuentinCapaccioli/script_shell_install.git
+cd script_shell_install
 chmod +x install.sh
 ./install.sh
 ```
